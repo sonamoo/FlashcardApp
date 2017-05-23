@@ -50,7 +50,7 @@
 
         $.ajax({
             type: 'POST',
-            url: 'https://blooming-sierra-29187.herokuapp.com/oauth2callback?state={{STATE}}', // send the state token to the server for anti forgery
+            url: '/oauth2callback?state={{STATE}}', // send the state token to the server for anti forgery
             processData: false,
             data: id_token, // send id_token to the server
             contentType: 'application/octet-stream; charset=utf-8',
