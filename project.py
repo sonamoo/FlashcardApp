@@ -98,6 +98,7 @@ def is_this_user_logged_in(user_id):
 @app.route('/login')
 def login():
     """Create a state token to the user and render login template"""
+    print "Now moved to the login function"
     state = hashlib.sha256(os.urandom(1024)).hexdigest()
     login_session['state'] = state
     return render_template('login.html',
@@ -122,6 +123,7 @@ def clearSession():
 @app.route('/oauth2callback', methods=['POST'])
 def oauth2callback():
     """Call back for Google Sign-In"""
+    print "Now moved to the callback function"
     # receive the state from the client and compare with the state token in
     # login session
     if request.args.get('state') != login_session['state']:
