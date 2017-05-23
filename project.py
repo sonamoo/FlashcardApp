@@ -99,7 +99,6 @@ def is_this_user_logged_in(user_id):
 def login():
     """Create a state token to the user and render login template"""
     state = hashlib.sha256(os.urandom(1024)).hexdigest()
-    print "state: " + state
     login_session['state'] = state
     return render_template('login.html',
                            STATE=state,
