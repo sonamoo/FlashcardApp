@@ -631,4 +631,4 @@ def show_memorized_cards(user_id):
 if __name__ == '__main__':
   app.secret_key = str(uuid.uuid4())
   app.debug = True
-  app.run(host='0.0.0.0', port=8000)
+  app.run()
