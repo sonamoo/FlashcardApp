@@ -23,6 +23,8 @@ import json
 
 
 app = Flask(__name__)
+app.secret_key = str(uuid.uuid4())
+app.debug = True
 
 
 
