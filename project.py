@@ -112,7 +112,8 @@ def login():
     login_session['state'] = state
     print "Now moved to the login function"
     print state
-    print "login_session['state'] : ", login_session['state']
+    print "login_session['state'] : "
+    print login_session['state']
 
 
     return render_template('login.html',
