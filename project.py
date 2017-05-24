@@ -40,6 +40,7 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if 'username' in login_session:
+            print "an user: ", login_session['username'], "is logged in."
             return f(*args, **kwargs)
         else:
             flash("You need to log in")
@@ -98,9 +99,10 @@ def is_this_user_logged_in(user_id):
 @app.route('/login')
 def login():
     """Create a state token to the user and render login template"""
-    print "Now moved to the login function"
     state = hashlib.sha256(os.urandom(1024)).hexdigest()
     login_session['state'] = state
+    print "Now moved to the login function"
+    print state
     return render_template('login.html',
                            STATE=state,
                            CLIENT_ID=CLIENT_ID)
