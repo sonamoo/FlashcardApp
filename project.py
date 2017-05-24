@@ -103,10 +103,12 @@ def login():
     login_session['state'] = state
     print "Now moved to the login function"
     print state
+    return "This is login page"
+    """
     return render_template('login.html',
                            STATE=state,
                            CLIENT_ID=CLIENT_ID)
-
+    """
 
 @app.route('/logout')
 def logout():
