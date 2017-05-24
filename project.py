@@ -14,12 +14,21 @@ import httplib2
 import os
 import json
 
+
+
+
 # ------------------------------------------------------------------------------
 #                                App Configurations
 # ------------------------------------------------------------------------------
 
 
 app = Flask(__name__)
+app.secret_key = str(uuid.uuid4())
+app.debug = True
+app.run()
+
+
+
 engine = create_engine('sqlite:///flashcard.db')
 
 Base.metadata.bind = engine
@@ -633,7 +642,4 @@ def show_memorized_cards(user_id):
     else:
         return "you are not authorized to see this page"
 
-if __name__ == '__main__':
-  app.secret_key = str(uuid.uuid4())
-  app.debug = True
-  app.run()
+
