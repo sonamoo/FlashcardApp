@@ -26,9 +26,6 @@ app = Flask(__name__)
 app.secret_key = str(uuid.uuid4())
 app.debug = True
 
-
-
-
 engine = create_engine('sqlite:///flashcard.db')
 
 Base.metadata.bind = engine
@@ -140,6 +137,8 @@ def oauth2callback():
     print "Now moved to the callback function"
     # receive the state from the client and compare with the state token in
     # login session
+    print "request.args.get('state'): "
+    print request.args.get('state')
     if request.args.get('state') != login_session['state']:
         response = make_response(json.dumps('Invalid state parameter.'), 401)
         response.headers['Content-Type'] = 'application/json'
@@ -195,6 +194,12 @@ def oauth2callback():
     login_session['username'] = data['name']
     login_session['picture'] = data['picture']
     login_session['email'] = data['email']
+    print login_session['id_token']
+    print login_session['gplus_id']
+    print login_session['provider']
+    print login_session['username']
+    print login_session['picture']
+    print login_session['email']
     print "saved user information!!!!******************************************"
     user_id = get_user_id(login_session)
     # if this user does not existed in the database
