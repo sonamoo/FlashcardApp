@@ -2,5 +2,5 @@ Flask==0.10.1
 SQLAlchemy==0.8.4
 Jinja2==2.7.2
 google-api-python-client
-gunicorn
+gunicorn==19.7
 Werkzeug==0.12
