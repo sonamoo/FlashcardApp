@@ -49,7 +49,7 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if 'username' in login_session:
-            print "an user: ", login_session['username'], "is logged in."
+            
             return f(*args, **kwargs)
         else:
             flash("You need to log in")
