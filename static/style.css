@@ -58,7 +58,7 @@ body {
 }
 
 .created-by {
-    font-size: 13px;
+    font-size: 15px;
     color: #5cb85c;
 }
 
@@ -96,6 +96,11 @@ body {
     box-shadow: 1px -1px 10px #000;
 }
 
+.card-detail-created {
+
+    margin-bottom: 15px;
+}
+
 .card-detail-name {
     font-size: 30px;
 }
@@ -116,18 +121,21 @@ body {
 }
 
 
-.previous-next-buttons {
+.previous-next-buttons-div {
     width: 200px;
     margin: 10px auto;
     text-align: center;
-    word-spacing: 30px;
     display: block;
 }
 
 
 
 .previous-button {
+    margin-right: 24px;
+}
 
+.previous-button, .next-button {
+    font-size: 25px;
 }
 
 .other-cards {
@@ -180,7 +188,7 @@ footer {
         flex-direction: column;
     }
 
-    .previous-next-buttons {
+    .previous-next-buttons-div {
         display: none;
     }
 
@@ -197,6 +205,7 @@ footer {
 
     .card-detail-created {
         padding: 0 37px;
+        margin-bottom: 20px;
     }
 
     .flashcard {
