@@ -8,7 +8,6 @@ from functools import wraps
 
 from oauth2client import client, crypt
 
-import uuid
 import hashlib
 import httplib2
 import os
