@@ -186,13 +186,7 @@ def oauth2callback():
     login_session['username'] = data['name']
     login_session['picture'] = data['picture']
     login_session['email'] = data['email']
-    print login_session['id_token']
-    print login_session['gplus_id']
-    print login_session['provider']
-    print login_session['username']
-    print login_session['picture']
-    print login_session['email']
-    print "saved user information!!!!******************************************"
+    
     user_id = get_user_id(login_session)
     # if this user does not existed in the database
     if not user_id:
