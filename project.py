@@ -49,7 +49,6 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if 'username' in login_session:
-            
             return f(*args, **kwargs)
         else:
             flash("You need to log in")
@@ -196,7 +195,7 @@ def oauth2callback():
     login_session['username'] = data['name']
     login_session['picture'] = data['picture']
     login_session['email'] = data['email']
-
+    print "saved user information!!!!******************************************"
     user_id = get_user_id(login_session)
     # if this user does not existed in the database
     if not user_id:
