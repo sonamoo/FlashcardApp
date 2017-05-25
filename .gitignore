@@ -1,4 +1,3 @@
-*.pyc
 second_project.py
 client_secret.json
-
+*.pyc
