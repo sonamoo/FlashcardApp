@@ -23,7 +23,7 @@ import json
 
 
 app = Flask(__name__)
-app.secret_key = str(uuid.uuid4())
+app.secret_key = 'supersecretkey'
 app.debug = True
 
 engine = create_engine('sqlite:///flashcard.db')
@@ -186,7 +186,7 @@ def oauth2callback():
     login_session['username'] = data['name']
     login_session['picture'] = data['picture']
     login_session['email'] = data['email']
-    
+
     user_id = get_user_id(login_session)
     # if this user does not existed in the database
     if not user_id:
