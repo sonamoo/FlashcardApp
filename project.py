@@ -197,7 +197,7 @@ def oauth2callback():
     print login_session['id_token']
     print login_session['gplus_id']
     print login_session['provider']
-    print login_session['username']
+    
     print login_session['picture']
     print login_session['email']
     print "saved user information!!!!******************************************"
