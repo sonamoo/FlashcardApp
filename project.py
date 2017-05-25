@@ -23,7 +23,7 @@ import json
 
 
 app = Flask(__name__)
-app.secret_key = "supersecret"
+app.secret_key = str(uuid.uuid4())
 app.debug = True
 
 engine = create_engine('sqlite:///flashcard.db')
@@ -106,11 +106,6 @@ def login():
     """Create a state token to the user and render login template"""
     state = hashlib.sha256(os.urandom(1024)).hexdigest()
     login_session['state'] = state
-    print "Now moved to the login function"
-    print state
-    print "login_session['state'] : "
-    print login_session['state']
-
 
     return render_template('login.html',
                            STATE=state,
@@ -134,11 +129,8 @@ def clearSession():
 @app.route('/oauth2callback', methods=['POST'])
 def oauth2callback():
     """Call back for Google Sign-In"""
-    print "Now moved to the callback function"
     # receive the state from the client and compare with the state token in
     # login session
-    print "request.args.get('state'): "
-    print request.args.get('state')
     if request.args.get('state') != login_session['state']:
         response = make_response(json.dumps('Invalid state parameter.'), 401)
         response.headers['Content-Type'] = 'application/json'
@@ -197,7 +189,7 @@ def oauth2callback():
     print login_session['id_token']
     print login_session['gplus_id']
     print login_session['provider']
-
+    print login_session['username']
     print login_session['picture']
     print login_session['email']
     print "saved user information!!!!******************************************"
