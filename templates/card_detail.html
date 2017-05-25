@@ -32,14 +32,14 @@
         Created by: <span class="created-by">{{card.created_by}}</span><br>
         Created_on: <span class="created-by">{{card.created_on}}</span>
     </div>
-    <div class="col-sm-1">
+    <div class="col-sm-1 col-md-1">
         <a style="display:block" href="{{url_for('card_detail', course_id=course.id, card_id=cards_id_list[card_index-1] )}}">
             <div class="previous-div">
                <span class="glyphicon glyphicon-triangle-left previous-button" aria-hidden="true"></span>
             </div>
         </a>
     </div>
-    <div class="col-sm-10">
+    <div class="col-sm-10 col-md-10">
         <div class="flashcard">
             <div class="card-detail-name">
                 <p>{{card.name}}</p>
@@ -49,7 +49,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-1">
+    <div class="col-sm-1 col-md-1">
         <a style="display:block" href="{{url_for('card_detail', course_id=course.id, card_id=cards_id_list[(card_index+1)%len_of_cards] )}}">
             <div class="next-div">
                 <span class="glyphicon glyphicon-triangle-right next-button" aria-hidden="true"></span>
@@ -60,10 +60,10 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="previous-next-buttons">
-            <div class="previous-next-buttons2">
+
                 <a href="{{url_for('card_detail', course_id=course.id, card_id=cards_id_list[card_index-1] )}}"><span class="glyphicon glyphicon-triangle-left previous-button" aria-hidden="true"></span></a>
                 <a href="{{url_for('card_detail', course_id=course.id, card_id=cards_id_list[(card_index+1)%len_of_cards] )}}"><span class="glyphicon glyphicon-triangle-right next-button" aria-hidden="true"></span></a>
-            </div>
+
         </div>
         <div class="other-cards">
             {% if card.id in memorized_cards_id_list %}
