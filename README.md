@@ -8,18 +8,5 @@ This Flask application help people to create collective flashcards and learn thi
 - Bootstrap
 - JQuery
 
-## Requirements
-- [Vagrant](https://www.vagrantup.com/)
-- [VirtualBox](https://www.virtualbox.org/)
-- [Python ~2.7](https://www.python.org/)
-
-## Run
-- Download all the requirements
-- Clone the [`fullstack-nanodegree-vm` repository](https://github.com/sonamoo/fullstack-nanodegree-vm)
-- Move to the /vagrant
-- Run `vagrant up`
-- Run 'vagrant ssh'
-- Run 'python project.py'
-- Move to the http://localhost:8000/ on your favorite web browser.
-
-# FlashcardApp
+## Current Running Web App
+- https://blooming-sierra-29187.herokuapp.com/courses/
